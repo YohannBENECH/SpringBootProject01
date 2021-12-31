@@ -18,13 +18,13 @@ public class DemoApplication {
 // Scheme
 /*
 * ---------------------------------
-*	API Layer (App & Controllers)
+*	API Layer (App) [@SpringBootApplication] & (Controllers) [@RestController]
 *		|
 *		V
-*	Service Layer (Services)
+*	Service Layer (Services) [@Service]
 *		|
 *		V
-*	Data Access Layer
+*	Data Access Layer (Interfaces) [@Repository]
 *		|
 *		V
 *	Database

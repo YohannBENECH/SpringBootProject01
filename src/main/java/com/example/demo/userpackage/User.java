@@ -1,6 +1,22 @@
-package com.example.demo.objects;
+package com.example.demo.userpackage;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table
 public class User {
+    @Id
+    @SequenceGenerator(
+            name="user_sequence",
+            sequenceName="user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )
+
     int id = 0;
     String name = "default_name";
     String login = "default_login";
@@ -11,6 +27,12 @@ public class User {
     // CONSTRUCTORS
 
     public User() {
+    }
+
+    public User(String name, String login, String password) {
+        this.name = name;
+        this.login = login;
+        this.password = password;
     }
 
     public User(int id, String name, String login, String password) {
