@@ -15,13 +15,15 @@ public class UserConfig {
             User rita = new User(
                     "Rita",
                     "R" + "1",
-                    ""
+                    "",
+                    "admin"
             );
 
             User rheinardt = new User(
                     "Rheinardt",
                     "R" + "2",
-                    ""
+                    "",
+                    "user"
             );
 
             userRepository.saveAll(

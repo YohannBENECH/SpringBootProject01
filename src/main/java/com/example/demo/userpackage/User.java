@@ -21,6 +21,7 @@ public class User {
     String name = "default_name";
     String login = "default_login";
     String password = "";
+    String role = "user";
 
 
     // ------------------------------------------------------------------------------------------------------------------
@@ -35,16 +36,23 @@ public class User {
         this.password = password;
     }
 
-    public User(int id, String name, String login, String password) {
+    public User(String name, String login, String password, String role) {
+        this.name = name;
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
+
+    public User(int id, String name, String login, String password, String role) {
         this.id = id;
         this.name = name;
         this.login = login;
         this.password = password;
+        this.role = role;
     }
 
     // ------------------------------------------------------------------------------------------------------------------
     // GETTERS
-
 
     public int getId() {
         return id;
@@ -62,9 +70,12 @@ public class User {
         return password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     // ------------------------------------------------------------------------------------------------------------------
     // SETTERS
-
 
     public void setId(int id) {
         this.id = id;
@@ -82,9 +93,13 @@ public class User {
         this.password = password;
     }
 
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     // ------------------------------------------------------------------------------------------------------------------
     // toString
+
     @Override
     public String toString() {
         return "User{" +
@@ -92,6 +107,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
