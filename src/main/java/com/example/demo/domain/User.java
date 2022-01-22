@@ -12,11 +12,11 @@ import java.util.Collection;
 @Entity @Data @NoArgsConstructor @AllArgsConstructor
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id = 0;
 
-    int id = 0;
-    String name = "name";
-    String username = "username";
-    String password = "password";
+    private String name = "name";
+    private String username = "username";
+    private String password = "password";
     @ManyToMany(fetch = FetchType.EAGER)
-    Collection<Role> roles = new ArrayList<>();
+    private Collection<Role> roles = new ArrayList<>();
 }
