@@ -29,6 +29,7 @@
         <th>Title</th>
         <th>Category</th>
         <th>Creator</th>
+        <th>Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -40,6 +41,7 @@
         <!--
         <td th:text="${ticket.getUser_creator().getFirstName()}">Creator</td>
         -->
+        <td text="${ticket.getUser_creator().getFirstName()}">  </td>
         <td text="Actions">
           <button>Suppr</button>
         </td>
