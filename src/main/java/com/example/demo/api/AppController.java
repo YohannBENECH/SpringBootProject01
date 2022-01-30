@@ -69,9 +69,12 @@ public class AppController {
     }
 
     @PostMapping("/ticket_creation")
-    public String createTicket(Ticket ticket) {
+    public String createTicket(Ticket ticket, Model model) {
 
         ticketRepo.save(ticket);
+
+        List<Ticket> listTickets = ticketRepo.findAll();
+        model.addAttribute("listTickets", listTickets);
 
         return "tickets";
     }

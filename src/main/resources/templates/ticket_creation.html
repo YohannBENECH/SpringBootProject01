@@ -11,7 +11,14 @@
     <form action="#" th:action="@{/ticket_creation}" th:object="${ticket}" method="post">
         <p>Title : <input type="text" th:field="*{title}" /></p>
         <p>Description : <input type="text" th:field="*{description}" /></p>
-        <p>Category : <input type="text" th:field="*{category}" /></p>
+        <!--<p>Category : <input type="text" th:field="*{category}" /></p>-->
+
+        <select name="category" th:field="*{category}">
+            <option value="Informatique">Informatique</option>
+            <option value="Entretien">Entretien</option>
+            <option value="Achat">Achat</option>
+        </select>
+
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 </body>
