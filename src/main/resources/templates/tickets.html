@@ -33,11 +33,16 @@
       </thead>
       <tbody>
       <tr th:each="ticket: ${listTickets}">
-        <td th:text="${ticket.id}">ID</td>
-        <td th:text="${ticket.title}">Title</td>
-        <td th:text="${ticket.category}">Category</td>
-        <td th:text="${ticket.user_creator}">Creator</td>
-        <td><button>Suppr</button></td>
+
+        <td th:text="${ticket.getId()}">ID</td>
+        <td th:text="${ticket.getTitle()}">Title</td>
+        <td th:text="${ticket.getCategory()}">Category</td>
+        <!--
+        <td th:text="${ticket.getUser_creator().getFirstName()}">Creator</td>
+        -->
+        <td text="Actions">
+          <button>Suppr</button>
+        </td>
       </tr>
 
 

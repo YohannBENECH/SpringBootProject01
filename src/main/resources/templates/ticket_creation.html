@@ -1,21 +1,18 @@
-<div class="rendered-form">
-    <div class="formbuilder-text form-group field-text-1643412863480">
-        <label for="text-1643412863480" class="formbuilder-text-label"><pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: " jetbrains="" mono ",=" " monospace;=" " --darkreader-inline-bgcolor:#2c2c2a;=" " --darkreader-inline-color:#b3ada3;"="" data-darkreader-inline-bgcolor="" data-darkreader-inline-color=""><span style="color: rgb(152, 118, 170); --darkreader-inline-color:#9b958b;" data-darkreader-inline-color="">title</span></pre></label>
-        <input type="text" class="form-control" name="text-1643412863480" access="false" id="text-1643412863480">
-    </div>
-    <div class="formbuilder-text form-group field-text-1643412869576">
-        <label for="text-1643412869576" class="formbuilder-text-label"><pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: " jetbrains="" mono ",=" " monospace;=" " --darkreader-inline-bgcolor:#2c2c2a;=" " --darkreader-inline-color:#b3ada3;"="" data-darkreader-inline-bgcolor="" data-darkreader-inline-color=""><span style="color: rgb(152, 118, 170); --darkreader-inline-color:#9b958b;" data-darkreader-inline-color="">description</span></pre></label>
-        <input type="text" class="form-control" name="text-1643412869576" access="false" id="text-1643412869576">
-    </div>
-    <div class="formbuilder-text form-group field-text-1643412865888">
-        <label for="text-1643412865888" class="formbuilder-text-label"><pre style="background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: " jetbrains="" mono ",=" " monospace;=" " --darkreader-inline-bgcolor:#2c2c2a;=" " --darkreader-inline-color:#b3ada3;"="" data-darkreader-inline-bgcolor="" data-darkreader-inline-color=""><span style="color: rgb(152, 118, 170); --darkreader-inline-color:#9b958b;" data-darkreader-inline-color="">category</span></pre></label>
-        <input type="text" class="form-control" name="text-1643412865888" access="false" id="text-1643412865888">
-    </div>
-    <div class="formbuilder-text form-group field-text-1643412990537">
-        <label for="text-1643412990537" class="formbuilder-text-label">Attributed to</label>
-        <input type="text" class="form-control" name="text-1643412990537" access="false" id="text-1643412990537">
-    </div>
-    <div class="formbuilder-button form-group field-button-1643412851611">
-        <button type="button" class="btn-default btn" name="button-1643412851611" access="false" style="default" id="button-1643412851611">Create</button>
-    </div>
-</div>
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <!-- https://spring.io/guides/gs/handling-form-submission/ -->
+    <title>Ticket Creation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Ticket</h1>
+
+    <form action="#" th:action="@{/ticket_creation}" th:object="${ticket}" method="post">
+        <p>Title : <input type="text" th:field="*{title}" /></p>
+        <p>Description : <input type="text" th:field="*{description}" /></p>
+        <p>Category : <input type="text" th:field="*{category}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>

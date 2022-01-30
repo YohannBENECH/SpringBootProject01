@@ -68,4 +68,12 @@ public class AppController {
         return "ticket_creation";
     }
 
+    @PostMapping("/ticket_creation")
+    public String createTicket(Ticket ticket) {
+
+        ticketRepo.save(ticket);
+
+        return "tickets";
+    }
+
 }
