@@ -1,6 +1,8 @@
 package com.example.demo.api;
 
+import com.example.demo.domain.Ticket;
 import com.example.demo.domain.User;
+import com.example.demo.repositories.TicketsRepository;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,6 +18,9 @@ public class AppController {
 
     @Autowired
     private UserRepository userRepo;
+
+    @Autowired
+    private TicketsRepository ticketRepo;
 
     @GetMapping("")
     public String viewHomePage() {
@@ -47,4 +52,20 @@ public class AppController {
 
         return "users";
     }
+
+    @GetMapping("/tickets")
+    public String listTickets(Model model) {
+        List<Ticket> listTickets = ticketRepo.findAll();
+        model.addAttribute("listTickets", listTickets);
+
+        return "tickets";
+    }
+
+    @GetMapping("/tickets/ticket_creation")
+    public String createTicketPage(Model model) {
+        model.addAttribute("ticket", new Ticket());
+
+        return "ticket_creation";
+    }
+
 }
